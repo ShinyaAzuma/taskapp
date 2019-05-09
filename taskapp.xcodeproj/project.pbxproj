@@ -14,6 +14,7 @@
 		88464E792276CD440046606A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88464E782276CD440046606A /* Assets.xcassets */; };
 		88464E7C2276CD440046606A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88464E7A2276CD440046606A /* LaunchScreen.storyboard */; };
 		88464E842276DB160046606A /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88464E832276DB160046606A /* InputViewController.swift */; };
+		88A7AA6B2276FB1A00157BC6 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A7AA6A2276FB1A00157BC6 /* Task.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		88464E7B2276CD440046606A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88464E7D2276CD440046606A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88464E832276DB160046606A /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
+		88A7AA6A2276FB1A00157BC6 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +50,6 @@
 				6580B8B56BA86CA5CB84F73A /* Pods-taskapp.debug.xcconfig */,
 				48466754B68B3015F5FE2F05 /* Pods-taskapp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -83,6 +84,7 @@
 			children = (
 				88464E712276CD430046606A /* AppDelegate.swift */,
 				88464E732276CD430046606A /* ViewController.swift */,
+				88A7AA6A2276FB1A00157BC6 /* Task.swift */,
 				88464E752276CD430046606A /* Main.storyboard */,
 				88464E782276CD440046606A /* Assets.xcassets */,
 				88464E7A2276CD440046606A /* LaunchScreen.storyboard */,
@@ -214,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88A7AA6B2276FB1A00157BC6 /* Task.swift in Sources */,
 				88464E842276DB160046606A /* InputViewController.swift in Sources */,
 				88464E742276CD430046606A /* ViewController.swift in Sources */,
 				88464E722276CD430046606A /* AppDelegate.swift in Sources */,
