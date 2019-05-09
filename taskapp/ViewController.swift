@@ -10,14 +10,14 @@ import UIKit
 import RealmSwift
 import UserNotifications
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var searchBar: UISearchBar!
     //Realmインスタンス取得
     let realm = try! Realm()
     
-  
+    
     
     
     //DB内のタスクが格納されるリスト
@@ -28,8 +28,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-    tableView.delegate = self
-    tableView.dataSource = self
+        tableView.delegate = self
+        tableView.dataSource = self
         searchBar.delegate = self
         
     }
@@ -54,7 +54,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     
- 
+    
     //各セルの内容を返すメソッド
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 再利用可能な cell を得る
@@ -70,19 +70,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let dateString:String = formatter.string(from: task.date)
         cell.detailTextLabel?.text = dateString
         return cell
-        }
-        
-    // MARK: UITableViewDelegateプロトコルのメソッド
-    // 各セルを選択した時に実行されるメソッド
-        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        performSegue(withIdentifier: "cellSegue", sender: nil)
     }
     
+    // MARK: UITableViewDelegateプロトコルのメソッド
+    // 各セルを選択した時に実行されるメソッド
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        performSegue(withIdentifier: "cellSegue", sender: nil)
+    }
+    // 入力画面から戻ってきた時に TableView を更新させる
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
     // セルが削除が可能なことを伝えるメソッド
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
     }
-
+    
     // Delete ボタンが押された時に呼ばれるメソッド
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -128,9 +132,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             inputViewController.task = task
         }
     }
-
     
     
-
+    
+    
 }
 
